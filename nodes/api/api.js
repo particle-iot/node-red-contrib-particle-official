@@ -45,7 +45,4 @@ module.exports = (RED) => {
 
 	RED.nodes.registerType('particle-api', ParticleAPINode);
 
-	RED.httpAdmin.get('/particle/js/api.definition.js', (req, res) => {
-		res.sendFile(__dirname + '/api.definition.js');
-	});
 };

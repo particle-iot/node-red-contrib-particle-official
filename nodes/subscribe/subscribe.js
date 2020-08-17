@@ -48,7 +48,4 @@ module.exports = (RED) => {
 
 	RED.nodes.registerType('particle-subscribe', ParticleSubscribeNode);
 
-	RED.httpAdmin.get('/particle/js/subscribe.definition.js', (req, res) => {
-		res.sendFile(__dirname + '/subscribe.definition.js');
-	});
 };

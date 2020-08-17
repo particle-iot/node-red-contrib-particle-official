@@ -40,7 +40,4 @@ module.exports = (RED) => {
 
 	RED.nodes.registerType('particle-function', ParticleFunctionNode);
 
-	RED.httpAdmin.get('/particle/js/function.definition.js', (req, res) => {
-		res.sendFile(__dirname + '/function.definition.js');
-	});
 };

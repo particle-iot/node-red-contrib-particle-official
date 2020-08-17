@@ -35,7 +35,4 @@ module.exports = (RED) => {
 
 	RED.nodes.registerType('particle-publish', ParticlePublishNode);
 
-	RED.httpAdmin.get('/particle/js/publish.definition.js', (req, res) => {
-		res.sendFile(__dirname + '/publish.definition.js');
-	});
 };

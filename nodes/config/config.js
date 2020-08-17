@@ -9,7 +9,4 @@ module.exports = (RED) => {
 
 	RED.nodes.registerType('particle-config', ParticleConfigNode);
 
-	RED.httpAdmin.get('/particle/js/helpers.js', (req, res) => {
-		res.sendFile(__dirname + '/helpers.js');
-	});
 };

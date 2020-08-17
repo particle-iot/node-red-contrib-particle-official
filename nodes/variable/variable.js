@@ -39,11 +39,5 @@ module.exports = (RED) => {
 
 	RED.nodes.registerType('particle-variable', ParticleVariableNode);
 
-	RED.httpAdmin.get('/particle/js/variable.definition.js', (req, res) => {
-		res.sendFile(__dirname + '/variable.definition.js');
-	});
 
-	RED.httpAdmin.get('/particle/js/variable.client.js', (req, res) => {
-		res.sendFile(__dirname + '/variable.client.js');
-	});
 };

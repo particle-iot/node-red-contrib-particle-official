@@ -1,0 +1,33 @@
+{
+  "name": "@particle/node-red-contrib-particle-official",
+  "version": "0.1.3",
+  "description": "Official Node-RED Particle nodes",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/particle-iot/node-red-contrib-particle-official.git"
+  },
+  "keywords": [
+    "node-red"
+  ],
+  "node-red": {
+    "nodes": {
+      "config": "nodes/config/config.js",
+      "publish": "nodes/publish/publish.js",
+      "subscribe": "nodes/subscribe/subscribe.js",
+      "variable": "nodes/variable/variable.js",
+      "function": "nodes/function/function.js",
+      "api": "nodes/api/api.js"
+    }
+  },
+  "author": "Wojtek 'suda' Siudzinski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/particle-iot/node-red-contrib-particle-official/issues"
+  },
+  "homepage": "https://github.com/particle-iot/node-red-contrib-particle-official#readme",
+  "dependencies": {
+    "lodash": "^4.17.19",
+    "particle-api-js": "^9.0.2"
+  }
+}

@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    RED.nodes.registerType('particle-config', {
+		category: 'config',
+		defaults: {
+			clientId: { required: true },
+			clientSecret: { required: true }
+		},
+		label: function() {
+			return this.clientId;
+		}
+    });
+</script>
+
+<script type="text/x-red" data-template-name="particle-config">
+    <h5>1. Create a Particle OAuth client</h5>
+    <p>Follow the instructions from the <a href="https://docs.particle.io/guide/how-to-build-a-product/authentication/#creating-an-oauth-client">authentication guide</a>.</p>
+
+    <div class="info">
+        Make sure that you choose "Two-Legged Auth (Server)" as the client type to ensure sufficient permissions.
+    </div>
+
+    <h5>2. Copy the OAuth client credentials here:</h5>
+    <div class="form-row">
+        <label for="node-config-input-clientId"><i class="fa fa-id-badge"></i> Client ID</label>
+        <input type="text" id="node-config-input-clientId">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-clientSecret"><i class="fa fa-user-secret"></i> Client Secret</label>
+        <input type="password" id="node-config-input-clientSecret">
+    </div>
+</script>

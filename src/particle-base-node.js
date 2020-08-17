@@ -184,7 +184,7 @@ class ParticleBaseNode {
 
 		if (data) {
 			inputProperties.forEach(field => {
-				if (data[field] /* && !_var[field] */) {
+				if (data[field] && !_var[field]) {
 					_var[field] = data[field];
 				}
 			});

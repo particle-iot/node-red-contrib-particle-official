@@ -1,6 +1,6 @@
 {
   "name": "@particle/node-red-contrib-particle-official",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Official Node-RED Particle nodes",
   "scripts": {},
   "repository": {

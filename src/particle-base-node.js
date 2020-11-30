@@ -112,8 +112,8 @@ class ParticleBaseNode {
 		return helpers.resetStatus({ status: this.self.status.bind(this.self), timeout: 0 });
 	}
 
-	makeAPIRequest() {
-		const parameters = this.parametersFromVariables(this.variables, this.functionArguments);
+	makeAPIRequest(variables) {
+		const parameters = this.parametersFromVariables(variables, this.functionArguments);
 
 		if (!parameters) {
 			return null;
@@ -136,7 +136,7 @@ class ParticleBaseNode {
 				}
 
 				if (this.onAPIResponse) {
-					return this.onAPIResponse(this.variables, this.message, result);
+					return this.onAPIResponse(variables, this.message, result);
 				} else if (this.success && this.success.fields) {
 					const fields = this.success.fields;
 					let message = this.message || {};
@@ -145,7 +145,7 @@ class ParticleBaseNode {
 						if (field.path) {
 							message[field.key] = _.get(result, field.path);
 						} else if (field.value) {
-							message[field.key] = this.variables[field.value];
+							message[field.key] = variables[field.value];
 						} else if (field.key === 'payload') {
 							message.payload = result;
 						}
@@ -198,9 +198,9 @@ class ParticleBaseNode {
 			this.message = msg;
 		}
 
-		this.variables = this.mergePropertiesFromMsg(this.variables, this.inputProperties, msg);
+		let variables = this.mergePropertiesFromMsg(this.variables, this.inputProperties, msg);
 
-		this.makeAPIRequest();
+		this.makeAPIRequest(variables);
 	}
 
 	run() {
@@ -214,7 +214,7 @@ class ParticleBaseNode {
 				this.self.on('close', this.onClose.bind(this));
 
 				if (this.runOnLoad) {
-					this.makeAPIRequest();
+					this.makeAPIRequest(this.variables);
 				}
 			});
 	}

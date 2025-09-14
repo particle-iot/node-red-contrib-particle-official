@@ -28,6 +28,6 @@
   "homepage": "https://github.com/particle-iot/node-red-contrib-particle-official#readme",
   "dependencies": {
     "lodash": "^4.17.21",
-    "particle-api-js": "^9.0.2"
+    "particle-api-js": "^9.4.1"
   }
 }

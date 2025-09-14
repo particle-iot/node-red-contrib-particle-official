@@ -165,9 +165,7 @@ module.exports = class Api {
 		this._logger.log('Reauthenticating...');
 		this.cleanup();
 
-		this.login().then(() => {
-			this.listenToEventStream.apply(this, this._lastListenArguments);
-		}, () => {
+		this.login().catch(() => {
 			const retryIn = 5;
 			this._logger.error(`Failed to reauthenticate. Trying again in ${retryIn} seconds`);
 			setTimeout(this._reauthenticate.bind(this), retryIn * 1000);
